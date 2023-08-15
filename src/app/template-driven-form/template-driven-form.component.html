@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="bg-primary p-3 text-center">
+                <h2>Template Driven Form</h2>
+            </div>
+            <form #newForm="ngForm" (ngSubmit)="save(newForm.value)">
+                {{newForm.value | json}}
+                <hr>
+                 {{std | json}}
+                <hr>
+                <div class="form-group">
+                    <label for="">Name : </label>
+                    <input type="text" name="name" [(ngModel)]="std.name" class="form-control" placeholder="Enter Name" ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="">Age : </label>
+                    <input type="number" name="age" [(ngModel)]="std.age" class="form-control" placeholder="Enter Age" ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="">Email : </label>
+                    <input type="text" name="email" [(ngModel)]="std.email" class="form-control" placeholder="Enter Email" ngModel>
+                </div>
+                <div class="d-grid mt-3">
+                    <!-- <button type="button" class="btn btn-outline-primary">Submit</button> -->
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
