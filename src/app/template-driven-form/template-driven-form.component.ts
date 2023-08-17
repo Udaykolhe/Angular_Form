@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Student } from '../model/student';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-template-driven-form',
@@ -32,5 +33,8 @@ export class TemplateDrivenFormComponent {
     }
   //   console.log(selectedValue,checked)
      console.log(this.SelectedHobbies)
+  }
+  resetForm(my_form : NgForm){
+      my_form.resetForm();
   }
 }
