@@ -6,11 +6,11 @@
             </div>
         </div>
     </div>
-    <form #newForm="ngForm" (ngSubmit)="save(newForm.value)" novalidate>
-        {{newForm.value | json}}
+    <form class="mt-5" #newForm="ngForm" (ngSubmit)="save(newForm.value)" novalidate>
+        <!-- {{newForm.value | json}}
         <hr>
         {{std | json}}
-        <hr>
+        <hr> -->
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
@@ -54,7 +54,7 @@
                         Invalid Email
                     </div>
                 </div>
-                <div class="form-check">
+                <div class="form-check mt-5">
                     <input type="checkbox" class="form-check-input" name="accept" #accept="ngModel"
                         [(ngModel)]="std.accept" ngModel required>
                     <label for="">I Accept Terms & Conditaions</label>
@@ -103,30 +103,37 @@
                 <label for="">Select Hobbies : </label>
                 <div class="form-check">
                     <label for="">Cricket</label>
-                    <input type="checkbox" (change)="onChange($event)" class="form-check-input" name="hobbies" value="Cricket">
+                    <input type="checkbox" (change)="onChange($event)" class="form-check-input" name="hobbies"
+                        value="Cricket">
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" (change)="onChange($event)" class="form-check-input" name="hobbies" value="FootBall">
+                    <input type="checkbox" (change)="onChange($event)" class="form-check-input" name="hobbies"
+                        value="FootBall">
                     <label for="">FootBall</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" (change)="onChange($event)" class="form-check-input" name="hobbies" value="Hockey">
+                    <input type="checkbox" (change)="onChange($event)" class="form-check-input" name="hobbies"
+                        value="Hockey">
                     <label for="">Hockey</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" (change)="onChange($event)" class="form-check-input" name="hobbies" value="Chess">
+                    <input type="checkbox" (change)="onChange($event)" class="form-check-input" name="hobbies"
+                        value="Chess">
                     <label for="">Chess</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" (change)="onChange($event)" class="form-check-input" name="hobbies" value="Pool">
+                    <input type="checkbox" (change)="onChange($event)" class="form-check-input" name="hobbies"
+                        value="Pool">
                     <label for="">Pool</label>
                 </div>
-                   
-                </div>
+
             </div>
-        <div class=" mt-3">
-            <!-- <button type="button" class="btn btn-outline-primary">Submit</button> -->
-            <input type="submit" [class.disabled]="newForm.form.invalid || SelectedHobbies.length == 0" class="btn btn-primary" value="Submit">
         </div>
-    </form>
+        <div class="mt-2">
+            <input type="submit" [class.disabled]="newForm.form.invalid || SelectedHobbies.length == 0"
+                class="btn btn-primary btn-lg m-lg-3" value="Submit">
+            <button type="button" class="btn btn-danger btn-lg  m-lg-3" (click)="resetForm(newForm)">Reset</button>
+        </div>
+         </form>
+         
 </div>
